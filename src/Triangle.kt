@@ -1,3 +1,5 @@
+import kotlin.math.sqrt
+
 open class Triangle (name: String): Shape(name) {
     var Side_one: Double = 0.0;
     var Side_two: Double  = 0.0;
@@ -14,6 +16,7 @@ open class Triangle (name: String): Shape(name) {
     }
 
     override fun getArea(): Double{
-        return (width * height);
+        val perimeter = Side_one + Side_two + Side_three;
+        return (sqrt(perimeter * (perimeter - Side_one) * (perimeter - Side_two) * (perimeter - Side_three)))
     }
 }
